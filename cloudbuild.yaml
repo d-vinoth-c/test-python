@@ -9,7 +9,11 @@ steps:
 #      - |
 #        apt-get update && apt-get install -y python3 python3-pip
 #        python3 main.py
-
+  - name: 'ubuntu'
+    entrypoint: 'bash'
+    args:
+      - 'gcloud services enable artifactregistry.googleapis.com'
+      
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'  # Cloud SDK image
     entrypoint: 'gcloud'
     args:
